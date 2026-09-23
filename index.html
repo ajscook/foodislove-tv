@@ -6,7 +6,7 @@
   <title>Food Is Love TV | with Chef Lasse Sorensen</title>
   <meta name="description" content="Food Is Love is an 8-time Emmy-nominated food docuseries hosted by Master Chef Lasse Sorensen, and a 501(c)(3) nonprofit based in Alton, Illinois. Season 5 is coming soon.">
   <meta property="og:title" content="Food Is Love TV">
-  <meta property="og:description" content="Food is love. Go cook. Stream every season on YouTube, Prime Video, Tubi and PBS. Season 5 is coming soon.">
+  <meta property="og:description" content="Food is love. Let’s cook. Stream every season on YouTube, Prime Video, Tubi and PBS. Season 5 is coming soon.">
   <meta property="og:image" content="https://i.ytimg.com/vi/nm8gC1RD8l0/hqdefault.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon-heart.png">
@@ -63,7 +63,10 @@
     .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--soft); margin-bottom: 18px; }
     .kicker img { width: 22px; }
     .hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 900; text-transform: uppercase; letter-spacing: .01em; margin-bottom: 20px; }
-    .hero h1 .love { color: var(--red); }
+    .hero h1 .love { color: var(--white); }
+    /* The heart bubble stands in for the O in "Love", as in the logo */
+    .bubble-o { display: inline-block; width: .86em; height: .75em; margin: 0 .01em 0 .02em; vertical-align: -.02em; color: transparent; overflow: hidden; line-height: .75em; text-align: center;
+      background: url("assets/bubble-heart.png") center / contain no-repeat; }
     .hero-lede { font-size: clamp(17px, 2.2vw, 21px); font-weight: 300; color: var(--soft); max-width: 620px; margin: 0 auto 34px; }
     .hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
@@ -163,7 +166,7 @@
     <section class="hero">
       <div class="container">
         <span class="kicker"><img src="assets/bubble-heart.png" alt="" width="22" height="19"> <span>8× Emmy<sup>®</sup>-nominated docuseries</span></span>
-        <h1>Food is <span class="love">love.</span><br>Go cook.</h1>
+        <h1 class="hero-title">Food is <span class="love">L<span class="bubble-o">o</span>ve.</span><br>Let’s cook.</h1>
         <p class="hero-lede">We’re in the back plating something new. The full table opens soon. Until then, pull up a chair and catch up on the show.</p>
         <div class="hero-ctas">
           <a href="https://www.youtube.com/@FoodisLoveTV" class="btn btn-red" target="_blank" rel="noopener">Watch on YouTube</a>
