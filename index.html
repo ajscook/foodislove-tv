@@ -51,8 +51,8 @@
     .site-header { background: var(--header); border-bottom: 1px solid var(--line); }
     .header-inner { display: flex; align-items: center; justify-content: center; position: relative; padding: 22px 24px; }
     .brand img { width: auto; height: 112px; }
-    .social { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
-    .social a { display: block; width: 18px; height: 18px; color: var(--white); opacity: .85; }
+    .social { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+    .social a { display: block; width: 36px; height: 36px; color: var(--white); opacity: .85; }
     .social a:hover { opacity: 1; color: var(--red); }
     .social svg { width: 100%; height: 100%; fill: currentColor; }
     .social svg[fill="none"] { fill: none; }
@@ -156,7 +156,8 @@
     @media (max-width: 820px) {
       .header-inner { justify-content: space-between; padding: 14px 20px; }
       .brand img { height: 60px; }
-      .social { position: static; transform: none; }
+      .social { position: static; transform: none; gap: 18px; }
+      .social a { width: 30px; height: 30px; }
       .hero { padding: 72px 0 64px; }
       .now-grid, .table-grid { grid-template-columns: 1fr; gap: 24px; }
       .peek { grid-template-columns: 140px 1fr; }
