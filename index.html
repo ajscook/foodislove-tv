@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="assets/favicon-heart.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;0,700;0,800;0,900;1,600&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <!--
     FOOD IS LOVE: HOLDING PAGE
     One self-contained page in the same design as the full site (food-is-love-2026).
@@ -84,6 +84,8 @@
     .hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 900; text-transform: uppercase; letter-spacing: .01em; margin-bottom: 20px; }
     .hero h1 .love { color: var(--white); }
     .hero h1 .hl-red { color: var(--red); }
+    /* "Let's cook." : semi-bold italic, sentence case, white with a red apostrophe and period */
+    .hero h1 .lets { font-style: italic; font-weight: 600; text-transform: none; color: var(--white); }
     /* The heart bubble stands in for the O in "Love", as in the logo */
     .bubble-o { display: inline-block; width: .86em; height: .75em; margin: 0 .01em 0 .02em; vertical-align: -.02em; color: transparent; overflow: hidden; line-height: .75em; text-align: center;
       background: url("assets/bubble-heart.png") center / contain no-repeat; }
@@ -188,7 +190,7 @@
     <section class="hero">
       <div class="container">
         <span class="kicker"><img src="assets/bubble-heart.png" alt="" width="22" height="19"> <span>8× Emmy<sup>®</sup>-nominated docuseries</span></span>
-        <h1 class="hero-title">Food is <span class="love">L<span class="bubble-o">o</span>ve</span><span class="hl-red">.</span><br><span class="hl-red">Let</span>’<span class="hl-red">s cook</span>.</h1>
+        <h1 class="hero-title">Food is <span class="love">L<span class="bubble-o">o</span>ve</span><span class="hl-red">.</span><br><em class="lets">Let<span class="hl-red">’</span>s cook<span class="hl-red">.</span></em></h1>
         <p class="hero-lede"><span>We’re in the back plating something new.</span> <span>Until then, pull up a chair and catch up on the show.</span></p>
         <div class="hero-ctas">
           <a href="https://www.youtube.com/@FoodisLoveTV" class="btn btn-red" target="_blank" rel="noopener">Watch on YouTube</a>
