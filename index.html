@@ -86,7 +86,8 @@
     /* The heart bubble stands in for the O in "Love", as in the logo */
     .bubble-o { display: inline-block; width: .86em; height: .75em; margin: 0 .01em 0 .02em; vertical-align: -.02em; color: transparent; overflow: hidden; line-height: .75em; text-align: center;
       background: url("assets/bubble-heart.png") center / contain no-repeat; }
-    .hero-lede { font-size: clamp(17px, 2.2vw, 21px); font-weight: 300; color: var(--soft); max-width: 620px; margin: 0 auto 34px; }
+    .hero-lede { font-size: clamp(17px, 2.2vw, 21px); font-weight: 600; line-height: 1.55; color: var(--soft); max-width: 680px; margin: 0 auto 34px; text-align: center; }
+    .hero-lede span { display: block; text-wrap: balance; }
     .hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
     /* Platform icons under the YouTube button */
@@ -186,7 +187,7 @@
       <div class="container">
         <span class="kicker"><img src="assets/bubble-heart.png" alt="" width="22" height="19"> <span>8× Emmy<sup>®</sup>-nominated docuseries</span></span>
         <h1 class="hero-title">Food is <span class="love">L<span class="bubble-o">o</span>ve.</span><br>Let’s cook.</h1>
-        <p class="hero-lede">We’re in the back plating something new. The full table opens soon. Until then, pull up a chair and catch up on the show.</p>
+        <p class="hero-lede"><span>We’re in the back plating something new.</span> <span>Until then, pull up a chair and catch up on the show.</span></p>
         <div class="hero-ctas">
           <a href="https://www.youtube.com/@FoodisLoveTV" class="btn btn-red" target="_blank" rel="noopener">Watch on YouTube</a>
           <a href="#" class="btn btn-outline" data-give hidden>Give a meal: $8</a>
