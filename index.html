@@ -59,7 +59,8 @@
 
     /* Hero */
     /* Hero sunrise: a warm dome of light low on the horizon, gold at the core through orange to brand red.
-       It starts as a faint hint below the horizon and rises over ~14s, then stops (reduced-motion users see the end state). */
+       It starts as a faint hint below the horizon and rises over ~14s, then stops (reduced-motion users see the end state).
+       Its final height is set in the script so the glow fades out just below the headline on any screen size. */
     .hero { position: relative; overflow: hidden; text-align: center; padding: 104px 0 110px; isolation: isolate;
       background:
         linear-gradient(to top, rgba(244,132,115,.10), transparent 22%),
@@ -67,8 +68,8 @@
         radial-gradient(40% 50% at 50% 0%, rgba(255,255,255,.05), transparent 70%),
         var(--black); }
     .hero::before { content: ""; position: absolute; z-index: -1; left: 50%; bottom: 0;
-      width: min(1100px, 160vw); aspect-ratio: 1; border-radius: 50%;
-      transform: translate(-50%, 60%);
+      width: var(--sun-size, min(1100px, 160vw)); aspect-ratio: 1; border-radius: 50%;
+      transform: translate(-50%, var(--sun-end, 50%));
       background: radial-gradient(circle,
         rgba(255,214,92,.30) 0%, rgba(250,167,74,.26) 16%, rgba(244,132,115,.20) 30%,
         rgba(218,32,55,.24) 46%, rgba(218,32,55,.10) 60%, transparent 71%);
@@ -76,7 +77,7 @@
       animation: sunrise 14s cubic-bezier(.35,.05,.25,1) .6s both; }
     .hero::after { content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 1px;
       background: linear-gradient(90deg, transparent, rgba(250,167,74,.28) 30%, rgba(255,214,92,.35) 50%, rgba(250,167,74,.28) 70%, transparent); }
-    @keyframes sunrise { from { transform: translate(-50%, 90%); opacity: .12; } 35% { opacity: .45; } to { transform: translate(-50%, 60%); opacity: 1; } }
+    @keyframes sunrise { from { transform: translate(-50%, var(--sun-start, 80%)); opacity: .12; } 35% { opacity: .45; } to { transform: translate(-50%, var(--sun-end, 50%)); opacity: 1; } }
     @media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
     .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--soft); margin-bottom: 18px; }
     .kicker img { width: 22px; }
@@ -327,6 +328,24 @@
           link.replaceWith(f);
         });
       });
+
+      // Sunrise: end the rise so the glow's outer edge sits just below "Let's cook." at any screen size.
+      // The glow fades out at 35.5% of the dome's width from its center, so edge height = (0.855 - t) × width.
+      const hero = $('.hero'), title = $('.hero h1');
+      // On narrow screens the dome grows wider instead of rising, so its bright core stays on the horizon.
+      const placeSun = () => {
+        const base = Math.min(1100, window.innerWidth * 1.6);
+        const edge = hero.getBoundingClientRect().bottom - title.getBoundingClientRect().bottom - 10;
+        if (edge <= 0) return;
+        const D = Math.max(base, edge / 0.355);
+        hero.style.setProperty('--sun-size', Math.round(D) + 'px');
+        const t = Math.min(0.8, Math.max(0.2, 0.855 - edge / D));
+        hero.style.setProperty('--sun-end', (t * 100).toFixed(1) + '%');
+        hero.style.setProperty('--sun-start', ((t + 0.3) * 100).toFixed(1) + '%');
+      };
+      placeSun();
+      window.addEventListener('resize', placeSun);
+      document.fonts && document.fonts.ready.then(placeSun);
 
       $('#year').textContent = new Date().getFullYear();
     })();
