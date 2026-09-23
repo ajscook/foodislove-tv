@@ -81,11 +81,11 @@
     @media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
     .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--soft); margin-bottom: 18px; }
     .kicker img { width: 22px; }
-    .hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 900; text-transform: uppercase; letter-spacing: .01em; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 900; text-transform: uppercase; letter-spacing: -.025em; word-spacing: -.04em; margin-bottom: 20px; }
     .hero h1 .love { color: var(--white); }
     .hero h1 .hl-red { color: var(--red); }
     /* "Let's cook." : semi-bold italic, sentence case, white with a red apostrophe and period */
-    .hero h1 .lets { font-style: italic; font-weight: 600; text-transform: none; color: var(--white); }
+    .hero h1 .lets { font-style: italic; font-weight: 600; text-transform: none; color: var(--white); font-size: calc(1em - 2pt); letter-spacing: -.01em; }
     /* The heart bubble stands in for the O in "Love", as in the logo */
     .bubble-o { display: inline-block; width: .86em; height: .75em; margin: 0 .01em 0 .02em; vertical-align: -.02em; color: transparent; overflow: hidden; line-height: .75em; text-align: center;
       background: url("assets/bubble-heart.png") center / contain no-repeat; }
